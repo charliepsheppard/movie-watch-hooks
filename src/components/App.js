@@ -7,7 +7,7 @@ class App extends React.Component {
     state = {movies: []}
 
     onSearchSubmit = async term => {
-        const apiKey = '004fe88364bf7b2db8cbedbea28c063c'
+        const apiKey = process.env.REACT_APP_API_KEY
 
         const response = await moviedatabase.get(`/search/multi?api_key=${apiKey}&query=${term}`);
 
