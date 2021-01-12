@@ -2,9 +2,16 @@ import React from 'react';
 import moviedatabase from '../api/moviedatabase'
 import SearchBar from './SearchBar';
 import MovieList from './MovieList';
+import DropdownMenu from './DropdownMenu';
 
 class App extends React.Component {
-    state = {movies: []}
+    state = {movies: [], selectedOption: ''}
+
+    // componentDidMount() {
+    //     // this.setState({selectedOption: 'movie'})
+    //     this.onSelectedChange()
+    //     console.log('the component mounted')
+    // }
 
     onSearchSubmit = async term => {
         const apiKey = process.env.REACT_APP_API_KEY
@@ -15,12 +22,18 @@ class App extends React.Component {
         console.log(response.data.results);
         console.log(this.state);
     }
+
+    onSelectedChange = selected => {
+        this.setState({selectedOption: selected});
+    }
     
     render() {
+        console.log(this.state);
         return (
             <div>
+                {/* <DropdownMenu onChange={this.onSelectedChange} /> */}
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <MovieList movies={this.state.movies} />
+                <MovieList movies={this.state.movies} slectedOption={this.state.selectedOption} />
             </div>
         );
     }
