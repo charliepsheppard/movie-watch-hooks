@@ -1,3 +1,4 @@
+import './SearchBar.css';
 import React from 'react';
 
 class SearchBar extends React.Component {
@@ -11,15 +12,16 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-          <div className="search--form">
-            <form onSubmit={this.onFormSubmit} className="search--form__field">
-              <label>Search Movies</label>
+          <div className="search-form">
+            <form onSubmit={this.onFormSubmit} className="search-form-field">
+              {/* <placeholder>Search Movies</placeholder> */}
               <input
                 type="text"
                 value={this.state.term}
+                placeholder="Search"
                 onChange={(e) => this.setState({ term: e.target.value })}
               />
-              <button onClick={this.onFormSubmit}>Search</button>
+              <button onClick={this.onFormSubmit} className="search-button">Find</button>
             </form>
           </div>
         );

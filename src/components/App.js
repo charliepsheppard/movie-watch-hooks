@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import moviedatabase from '../api/moviedatabase'
 import SearchBar from './SearchBar';
@@ -28,16 +29,20 @@ class App extends React.Component {
     render() {
         console.log(this.state.movies);
         return (
-          <div>
-            <div>
-              <MovieDetail movie={this.state.selectedMovie} />
-            </div>
-            <div>
+          <div className="component-container">
+            <div className="search-bar">
               <SearchBar onSubmit={this.onSearchSubmit} />
-              <MovieList
-                movies={this.state.movies}
-                onMovieSelect={this.onMovieSelect}
-              />
+            </div>
+            <div className="movie-display-container">
+              <div className="movie-detail">
+                <MovieDetail movie={this.state.selectedMovie} />
+              </div>
+              <div className="movie-list">
+                <MovieList
+                  movies={this.state.movies}
+                  onMovieSelect={this.onMovieSelect}
+                />
+              </div>
             </div>
           </div>
         );

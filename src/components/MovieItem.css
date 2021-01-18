@@ -1,0 +1,21 @@
+.movie-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* max-width: 40%; */
+  flex-direction: row;
+  margin: .5em 0;
+  background-color: rgb(240, 236, 236);
+  opacity: 0.7;
+}
+
+.movie-item:hover {
+  /* background-color: rgb(240, 236, 236); */
+  /* box-shadow: 0, 1em, 1em, rgba(rgb(0, 0, 0), 0, 0, .5) */
+  opacity: 1;
+  
+}
+
+.movie-item-details {
+  align-self: center;
+}

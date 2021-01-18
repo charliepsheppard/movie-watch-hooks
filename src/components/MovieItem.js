@@ -1,3 +1,4 @@
+import './MovieItem.css';
 import React from 'react';
 
 const MovieItem = ({movie, onMovieSelect, imgSrc}) => {
@@ -8,9 +9,9 @@ const MovieItem = ({movie, onMovieSelect, imgSrc}) => {
             const personArray = movie.known_for.map(personData => {
                 const personImagePath = `http://image.tmdb.org/t/p/w92/${personData.poster_path}`;
                 return (
-                    <div onClick={() => onMovieSelect(movie)} key={personData.id}>
-                        {personData.title}
+                    <div onClick={() => onMovieSelect(personData)} key={personData.id} className="movie-item">
                         <img src={personImagePath} alt={personData.overview} />
+                        {personData.title}
                         {personData.vote_average}
                     </div>
                 )
@@ -23,23 +24,15 @@ const MovieItem = ({movie, onMovieSelect, imgSrc}) => {
         return <div key={movie.id}>{movie.title}</div>;
     } else {
         return (
-          <div onClick={() => onMovieSelect(movie)}>
-            {movie.title}
+          <div onClick={() => onMovieSelect(movie)} className="movie-item">
             <img src={imgSrc} alt={movie.overview} />
-            {movie.vote_average}
+            <div>
+                <div className="movie-item-details">{movie.title}</div>
+                <div className="movie-item-details">Rating: {movie.vote_average}</div>
+            </div>
           </div>
         );
     };
-
-    console.log(movie)
-
-    // return (
-    //       <div onClick={() => onMovieSelect(movie)}>
-    //         {movie.title}
-    //         <img src={imgSrc} alt={movie.overview} />
-    //         {movie.vote_average}
-    //       </div>
-    // )
 }
 
 export default MovieItem;
