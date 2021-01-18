@@ -1,9 +1,10 @@
 import './App.css';
 import React from 'react';
-import moviedatabase from '../api/moviedatabase'
-import SearchBar from './SearchBar';
-import MovieList from './MovieList';
-import MovieDetail from './MovieDetail';
+import moviedatabase from '../../api/moviedatabase'
+import SearchBar from '../SearchBar/SearchBar';
+import MovieList from '../MovieList/MovieList';
+import MovieDetail from '../MovieDetail/MovieDetail';
+import Footer from '../Footer/Footer';
 
 class App extends React.Component {
     state = {movies: [], selectedMovie: null}
@@ -43,6 +44,9 @@ class App extends React.Component {
                   onMovieSelect={this.onMovieSelect}
                 />
               </div>
+            </div>
+            <div className="footer">
+              <Footer />
             </div>
           </div>
         );

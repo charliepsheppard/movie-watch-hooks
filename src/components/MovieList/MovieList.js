@@ -1,6 +1,6 @@
 import './MovieList.css';
 import React from 'react';
-import MovieItem from './MovieItem';
+import MovieItem from '../MovieItem/MovieItem';
 
 const MovieList = ({movies, onMovieSelect}) => {
     const renderedMovies = movies.map(movie => {

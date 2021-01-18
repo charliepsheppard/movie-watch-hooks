@@ -5,6 +5,8 @@ const MovieDetail = ({movie}) => {
     // console.log(movie.poster_path);
     // const imgSrc = `http://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
+    console.log(movie);
+
     if (!movie) {
         return <div>...Loading</div>
     }
@@ -19,12 +21,15 @@ const MovieDetail = ({movie}) => {
             />
           </div>
           <div className="detail-description">
-            <h4>{movie.title}</h4>
-            <p>{movie.overview}</p>
+            <h2>{movie.name}</h2>
           </div>
         </div>
       )
     } 
+
+    if (movie.profile_path === 'null' || movie.poster_path === 'null') {
+      return <div>No image available</div>
+    }
 
     return (
       <div className="detail-container">
@@ -35,7 +40,7 @@ const MovieDetail = ({movie}) => {
           />
         </div>
         <div className="detail-description">
-          <h4>{movie.title}</h4>
+          <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
         </div>
       </div>

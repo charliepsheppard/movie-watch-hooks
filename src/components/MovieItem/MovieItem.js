@@ -8,11 +8,14 @@ const MovieItem = ({movie, onMovieSelect, imgSrc}) => {
             console.log('this is a person')
             const personArray = movie.known_for.map(personData => {
                 const personImagePath = `http://image.tmdb.org/t/p/w92/${personData.poster_path}`;
+                console.log(personData)
                 return (
                     <div onClick={() => onMovieSelect(personData)} key={personData.id} className="movie-item">
                         <img src={personImagePath} alt={personData.overview} />
-                        {personData.title}
-                        {personData.vote_average}
+                        <div>
+                            <div className="movie-item-details">{personData.title}</div>
+                            <div className="movie-item-details">Rating: {personData.vote_average}</div>
+                        </div>
                     </div>
                 )
             });
