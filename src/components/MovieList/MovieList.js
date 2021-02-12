@@ -7,8 +7,7 @@ const MovieList = ({movies, onMovieSelect}) => {
         const imagePath = `http://image.tmdb.org/t/p/w92/${movie.poster_path}`;
         return <MovieItem key={movie.id} onMovieSelect={onMovieSelect} movie={movie} imgSrc={imagePath} />
     });
-
-    console.log(movies);
+    
     return (
         <div className="movie-list-container">
             {renderedMovies}

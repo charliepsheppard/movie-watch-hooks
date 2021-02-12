@@ -2,11 +2,6 @@ import './MovieDetail.css';
 import React from 'react';
 
 const MovieDetail = ({movie}) => {
-    // console.log(movie.poster_path);
-    // const imgSrc = `http://image.tmdb.org/t/p/w500${movie.poster_path}`;
-
-    console.log(movie);
-
     if (!movie) {
         return <div>...Loading</div>
     }
