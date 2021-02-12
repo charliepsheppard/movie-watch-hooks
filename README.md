@@ -1,4 +1,4 @@
-# MovieWatch
+# MovieWatch - Hooks
 
 This is a project focused on allowing the user to search for movies, tv shows, director, etc. 
 
